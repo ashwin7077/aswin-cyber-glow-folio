@@ -224,10 +224,8 @@ const Index = () => {
       case "dashboard":
         return (
           <div className="space-y-12">
-            {/* Animated Terminal */}
             <AnimatedTerminal />
 
-            {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
                 <CardContent className="p-6">
@@ -282,7 +280,6 @@ const Index = () => {
               </Card>
             </div>
 
-            {/* Live Activity Feed */}
             <Card className="bg-gray-900 border-gray-800 cyber-border">
               <CardHeader>
                 <CardTitle className="text-gray-100 flex items-center">
@@ -402,7 +399,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
-      {/* Terminal Header */}
       <div className="bg-gray-900 border-b border-gray-800 p-2">
         <div className="flex items-center space-x-2 text-sm">
           <div className="flex space-x-1">
@@ -415,7 +411,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Enhanced Navigation */}
       <nav className="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
@@ -455,7 +450,6 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section */}
       <section className="py-20 px-6 gradient-bg relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-green-400/5 via-blue-400/5 to-purple-400/5"></div>
         <div className="max-w-7xl mx-auto relative">
@@ -479,13 +473,13 @@ const Index = () => {
               
               <div className="space-y-2 animate-slide-up" style={{ animationDelay: '0.6s' }}>
                 <p className="text-2xl text-gray-300 font-mono">
-                  <span className="text-green-400">></span> Cybersecurity Specialist
+                  <span className="text-green-400">{'>'}</span> Cybersecurity Specialist
                 </p>
                 <p className="text-xl text-gray-400 font-mono">
-                  <span className="text-blue-400">></span> Ethical Hacker & Security Researcher
+                  <span className="text-blue-400">{'>'}</span> Ethical Hacker & Security Researcher
                 </p>
                 <p className="text-lg text-gray-500 font-mono">
-                  <span className="text-purple-400">></span> CTF Player & Bug Bounty Hunter
+                  <span className="text-purple-400">{'>'}</span> CTF Player & Bug Bounty Hunter
                 </p>
               </div>
               
@@ -508,12 +502,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         {renderSection()}
       </div>
 
-      {/* Enhanced Footer */}
       <footer className="bg-gray-900 border-t border-gray-800 py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-green-400/5 via-transparent to-blue-400/5"></div>
         <div className="max-w-7xl mx-auto px-6 relative">
