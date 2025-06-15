@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -222,95 +223,117 @@ const Index = () => {
     switch (activeSection) {
       case "dashboard":
         return (
-          <div className="space-y-12">
+          <div className="space-y-16">
             <AnimatedTerminal />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
-                <CardContent className="p-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <Card className="professional-card relative group hover-lift hover-glow">
+                <CardContent className="p-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">Active Projects</p>
-                      <p className="text-3xl font-bold text-green-400">6</p>
+                      <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Active Projects</p>
+                      <p className="text-4xl font-bold text-primary mt-2">6</p>
                     </div>
-                    <Code className="w-10 h-10 text-green-400 group-hover:scale-110 transition-transform" />
+                    <Code className="w-12 h-12 text-primary group-hover:scale-110 transition-transform animate-float" />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">+2 this month</div>
+                  <div className="mt-4 text-sm text-muted-foreground">+2 this month</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
-                <CardContent className="p-6">
+              <Card className="professional-card relative group hover-lift hover-glow">
+                <CardContent className="p-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">CTF Solved</p>
-                      <p className="text-3xl font-bold text-blue-400">187</p>
+                      <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">CTF Solved</p>
+                      <p className="text-4xl font-bold text-primary mt-2">187</p>
                     </div>
-                    <Trophy className="w-10 h-10 text-blue-400 group-hover:scale-110 transition-transform" />
+                    <Trophy className="w-12 h-12 text-primary group-hover:scale-110 transition-transform animate-float" style={{ animationDelay: '1s' }} />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">Top 5% globally</div>
+                  <div className="mt-4 text-sm text-muted-foreground">Top 5% globally</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
-                <CardContent className="p-6">
+              <Card className="professional-card relative group hover-lift hover-glow">
+                <CardContent className="p-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">Certifications</p>
-                      <p className="text-3xl font-bold text-purple-400">4</p>
+                      <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Certifications</p>
+                      <p className="text-4xl font-bold text-primary mt-2">4</p>
                     </div>
-                    <Award className="w-10 h-10 text-purple-400 group-hover:scale-110 transition-transform" />
+                    <Award className="w-12 h-12 text-primary group-hover:scale-110 transition-transform animate-float" style={{ animationDelay: '2s' }} />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">OSCP in progress</div>
+                  <div className="mt-4 text-sm text-muted-foreground">OSCP in progress</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
-                <CardContent className="p-6">
+              <Card className="professional-card relative group hover-lift hover-glow">
+                <CardContent className="p-8">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">Writeups</p>
-                      <p className="text-3xl font-bold text-yellow-400">45</p>
+                      <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">Publications</p>
+                      <p className="text-4xl font-bold text-primary mt-2">45</p>
                     </div>
-                    <Book className="w-10 h-10 text-yellow-400 group-hover:scale-110 transition-transform" />
+                    <Book className="w-12 h-12 text-primary group-hover:scale-110 transition-transform animate-float" style={{ animationDelay: '3s' }} />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">Medium & GitHub</div>
+                  <div className="mt-4 text-sm text-muted-foreground">Medium & GitHub</div>
                 </CardContent>
               </Card>
             </div>
 
-            <Card className="bg-gray-900 border-gray-800 cyber-border">
+            <Card className="professional-card relative">
               <CardHeader>
-                <CardTitle className="text-gray-100 flex items-center">
-                  <Activity className="w-5 h-5 mr-2 text-green-400" />
-                  Live Activity Feed
+                <CardTitle className="text-foreground flex items-center text-2xl">
+                  <Activity className="w-6 h-6 mr-3 text-primary" />
+                  Recent Activity
                 </CardTitle>
+                <CardDescription className="text-muted-foreground text-lg">
+                  Latest achievements and contributions
+                </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4 font-mono text-sm">
-                  <div className="flex items-center space-x-3 animate-fade-in">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-green-400">[LIVE]</span>
-                    <span className="text-gray-300">Completed TryHackMe "Relevant" room - Windows privilege escalation</span>
-                    <span className="text-gray-500">23 minutes ago</span>
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-4 p-4 rounded-lg bg-primary/5 border border-primary/20 animate-fade-in">
+                    <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3">
+                        <Badge className="bg-primary/10 text-primary border-primary/20">LIVE</Badge>
+                        <span className="text-foreground font-medium">Completed TryHackMe "Relevant" room</span>
+                      </div>
+                      <p className="text-muted-foreground text-sm mt-1">Windows privilege escalation • 23 minutes ago</p>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-blue-400">[BLOG]</span>
-                    <span className="text-gray-300">Published "Advanced XSS Techniques" on Medium</span>
-                    <span className="text-gray-500">2 hours ago</span>
+                  
+                  <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                    <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3">
+                        <Badge className="bg-blue-400/10 text-blue-400 border-blue-400/20">BLOG</Badge>
+                        <span className="text-foreground font-medium">Published "Advanced XSS Techniques"</span>
+                      </div>
+                      <p className="text-muted-foreground text-sm mt-1">Medium publication • 2 hours ago</p>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <span className="text-yellow-400">[CVE]</span>
-                    <span className="text-gray-300">Submitted critical vulnerability report to vendor</span>
-                    <span className="text-gray-500">1 day ago</span>
+                  
+                  <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3">
+                        <Badge className="bg-yellow-400/10 text-yellow-400 border-yellow-400/20">CVE</Badge>
+                        <span className="text-foreground font-medium">Critical vulnerability report submitted</span>
+                      </div>
+                      <p className="text-muted-foreground text-sm mt-1">Security research • 1 day ago</p>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-purple-400">[CERT]</span>
-                    <span className="text-gray-300">OSCP Lab progress: 75% complete</span>
-                    <span className="text-gray-500">3 days ago</span>
+                  
+                  <div className="flex items-center space-x-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3">
+                        <Badge className="bg-purple-400/10 text-purple-400 border-purple-400/20">CERT</Badge>
+                        <span className="text-foreground font-medium">OSCP Lab progress: 75% complete</span>
+                      </div>
+                      <p className="text-muted-foreground text-sm mt-1">Certification path • 3 days ago</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -397,47 +420,49 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100">
-      <div className="bg-gray-900 border-b border-gray-800 p-2">
-        <div className="flex items-center space-x-2 text-sm">
-          <div className="flex space-x-1">
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Professional Terminal Header */}
+      <div className="bg-card/50 backdrop-blur-sm border-b border-border/50 p-3">
+        <div className="flex items-center space-x-3 text-sm font-mono">
+          <div className="flex space-x-2">
             <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
             <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="w-3 h-3 bg-primary rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
           </div>
-          <span className="text-gray-400 font-mono">aswin@cybersec:~$</span>
-          <span className="text-green-400 font-mono animate-pulse">_</span>
+          <span className="text-muted-foreground">aswin@cybersec-pro:~$</span>
+          <span className="text-primary animate-pulse">portfolio --professional</span>
         </div>
       </div>
 
-      <nav className="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-background/95 backdrop-blur-lg border-b border-border/50 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4">
               <div className="relative">
-                <Terminal className="w-8 h-8 text-green-400 animate-glow" />
-                <div className="absolute inset-0 bg-green-400 opacity-20 rounded-full animate-ping"></div>
+                <Shield className="w-10 h-10 text-primary animate-glow" />
+                <div className="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
               </div>
               <div>
-                <span className="text-2xl font-bold text-green-400 font-mono">aswin@cybersec</span>
-                <div className="text-xs text-gray-500 font-mono">Cybersecurity Specialist</div>
+                <span className="text-3xl font-bold text-primary">Aswin Paudel</span>
+                <div className="text-sm text-muted-foreground font-medium">Cybersecurity Professional</div>
               </div>
             </div>
-            <div className="flex space-x-1">
+            <div className="flex space-x-2">
               {[
-                { id: "dashboard", label: "dashboard", icon: Activity },
-                { id: "projects", label: "projects", icon: Briefcase },
-                { id: "skills", label: "skills", icon: Code },
-                { id: "certifications", label: "certifications", icon: Award },
-                { id: "achievements", label: "achievements", icon: Trophy }
+                { id: "dashboard", label: "Overview", icon: Activity },
+                { id: "projects", label: "Projects", icon: Briefcase },
+                { id: "skills", label: "Skills", icon: Code },
+                { id: "certifications", label: "Certifications", icon: Award },
+                { id: "achievements", label: "Achievements", icon: Trophy }
               ].map((section) => (
                 <button
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-mono text-sm transition-all cyber-button ${
+                  className={`flex items-center space-x-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 ${
                     activeSection === section.id
-                      ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                      : "text-gray-400 hover:text-gray-200 hover:bg-gray-800"
+                      ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                   }`}
                 >
                   <section.icon className="w-4 h-4" />
@@ -449,51 +474,52 @@ const Index = () => {
         </div>
       </nav>
 
-      <section className="py-20 px-6 gradient-bg relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-400/5 via-blue-400/5 to-purple-400/5"></div>
+      {/* Hero Section */}
+      <section className="py-32 px-6 gradient-bg relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        </div>
+        
         <div className="max-w-7xl mx-auto relative">
           <div className="text-center">
-            <div className="mb-12 animate-fade-in">
-              <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-green-400/20 via-blue-400/20 to-purple-400/20 p-1 animate-glow">
-                <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center relative overflow-hidden">
-                  <Shield className="w-24 h-24 text-green-400 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-blue-400/10 animate-pulse"></div>
+            <div className="mb-16 animate-fade-in">
+              <div className="w-56 h-56 mx-auto mb-12 rounded-full bg-gradient-to-r from-primary/20 via-emerald-400/20 to-teal-400/20 p-2 animate-glow">
+                <div className="w-full h-full rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center relative overflow-hidden">
+                  <Shield className="w-28 h-28 text-primary relative z-10 animate-float" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-emerald-400/10 animate-pulse"></div>
                 </div>
               </div>
               
-              <h1 className="text-7xl font-bold mb-6 font-mono">
-                <span className="text-gradient animate-slide-up">Aswin</span>{" "}
-                <span className="text-gray-100 animate-slide-up" style={{ animationDelay: '0.2s' }}>Paudel</span>
+              <h1 className="text-7xl lg:text-8xl font-bold mb-8 animate-slide-up">
+                <span className="text-gradient">Aswin</span>{" "}
+                <span className="text-foreground">Paudel</span>
               </h1>
               
-              <div className="text-3xl text-gray-300 mb-4 font-mono animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                <span className="text-green-400">$</span> whoami
-              </div>
-              
-              <div className="space-y-2 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-                <p className="text-2xl text-gray-300 font-mono">
-                  <span className="text-green-400">{'>'}</span> Cybersecurity Specialist
+              <div className="space-y-4 mb-12 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                <p className="text-3xl lg:text-4xl text-foreground font-semibold">
+                  Cybersecurity Professional
                 </p>
-                <p className="text-xl text-gray-400 font-mono">
-                  <span className="text-blue-400">{'>'}</span> Ethical Hacker & Security Researcher
+                <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  Ethical Hacker • Security Researcher • Penetration Testing Specialist
                 </p>
-                <p className="text-lg text-gray-500 font-mono">
-                  <span className="text-purple-400">{'>'}</span> CTF Player & Bug Bounty Hunter
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Protecting digital infrastructure through advanced security research and ethical hacking methodologies
                 </p>
               </div>
               
-              <div className="flex justify-center space-x-4 mt-8 animate-slide-up" style={{ animationDelay: '0.8s' }}>
-                <Button className="bg-green-500 hover:bg-green-600 text-black font-mono cyber-button">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact Me
+              <div className="flex flex-col sm:flex-row justify-center gap-6 animate-slide-up" style={{ animationDelay: '0.6s' }}>
+                <Button size="lg" className="professional-button text-lg px-8 py-4">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Get In Touch
                 </Button>
-                <Button variant="outline" className="border-green-500/30 text-green-400 hover:bg-green-500/10 font-mono cyber-button">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download CV
+                <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10 text-lg px-8 py-4 hover-lift">
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Resume
                 </Button>
-                <Button variant="outline" className="border-blue-500/30 text-blue-400 hover:bg-blue-500/10 font-mono cyber-button">
-                  <Book className="w-4 h-4 mr-2" />
-                  Read Blog
+                <Button size="lg" variant="outline" className="border-emerald-400/30 text-emerald-400 hover:bg-emerald-400/10 text-lg px-8 py-4 hover-lift">
+                  <Book className="w-5 h-5 mr-2" />
+                  Technical Blog
                 </Button>
               </div>
             </div>
@@ -501,48 +527,50 @@ const Index = () => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      {/* Main Content */}
+      <div className="max-w-7xl mx-auto px-6 py-16">
         {renderSection()}
       </div>
 
-      <footer className="bg-gray-900 border-t border-gray-800 py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-400/5 via-transparent to-blue-400/5"></div>
+      {/* Professional Footer */}
+      <footer className="bg-card/30 backdrop-blur-sm border-t border-border/50 py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-emerald-400/5"></div>
         <div className="max-w-7xl mx-auto px-6 relative">
-          <div className="text-center space-y-8">
-            <h3 className="text-4xl font-bold text-gray-100 mb-4 font-mono">
-              $ contact --aswin --secure
-            </h3>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Open to collaboration on cybersecurity research, bug bounty partnerships, 
-              and discussing the latest threats in the digital landscape.
-            </p>
+          <div className="text-center space-y-12">
+            <div className="space-y-6">
+              <h3 className="text-5xl font-bold text-foreground">
+                Let's Connect
+              </h3>
+              <p className="text-muted-foreground text-xl max-w-3xl mx-auto leading-relaxed">
+                Open to opportunities in cybersecurity consulting, red team operations, 
+                and collaborative security research initiatives.
+              </p>
+            </div>
             
-            <div className="flex justify-center space-x-6">
-              <Button size="lg" className="bg-green-500 hover:bg-green-600 text-black font-mono cyber-button">
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <Button size="lg" className="professional-button text-lg px-8 py-4">
                 <Mail className="w-5 h-5 mr-2" />
-                aswin@cybersec.dev
+                aswin.paudel@cybersec.dev
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 font-mono cyber-button">
+              <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-muted/50 text-lg px-8 py-4 hover-lift">
                 <Github className="w-5 h-5 mr-2" />
-                GitHub
+                GitHub Portfolio
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 font-mono cyber-button">
+              <Button size="lg" variant="outline" className="border-border text-foreground hover:bg-muted/50 text-lg px-8 py-4 hover-lift">
                 <Linkedin className="w-5 h-5 mr-2" />
-                LinkedIn
+                LinkedIn Profile
               </Button>
             </div>
             
-            <Separator className="my-8 bg-gray-800" />
+            <div className="section-divider my-12"></div>
             
-            <div className="space-y-4">
-              <p className="text-gray-500 font-mono">
-                © 2024 Aswin Paudel | Securing the digital world, one vulnerability at a time
+            <div className="space-y-6">
+              <p className="text-muted-foreground">
+                © 2024 Aswin Paudel • Professional Cybersecurity Portfolio
               </p>
-              <div className="flex justify-center space-x-4 text-sm text-gray-600">
+              <div className="flex justify-center gap-8 text-sm text-muted-foreground">
                 <span>Built with React & TypeScript</span>
-                <span>•</span>
                 <span>Styled with Tailwind CSS</span>
-                <span>•</span>
                 <span>Deployed on Lovable</span>
               </div>
             </div>
