@@ -7,44 +7,44 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 210 40% 8%;
+    --foreground: 213 31% 91%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 40% 12%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 40% 12%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 18%;
+    --secondary-foreground: 213 31% 91%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 40% 15%;
+    --muted-foreground: 215 20% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 40% 18%;
+    --accent-foreground: 213 31% 91%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 210 40% 18%;
+    --input: 210 40% 18%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 210 40% 10%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 210 40% 8%;
+    --sidebar-accent: 210 40% 15%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 210 40% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -54,8 +54,8 @@
   }
 
   body {
-    @apply bg-slate-900 text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
 
   html {
@@ -77,14 +77,14 @@
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent;
   }
 
   .cyber-border {
     position: relative;
-    border: 1px solid transparent;
-    background: linear-gradient(145deg, rgba(168, 85, 247, 0.1), rgba(6, 182, 212, 0.1)) padding-box,
-                linear-gradient(145deg, rgba(168, 85, 247, 0.3), rgba(6, 182, 212, 0.3)) border-box;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    backdrop-filter: blur(8px);
   }
 
   .cyber-border::before {
@@ -96,9 +96,18 @@
     bottom: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(145deg, rgba(168, 85, 247, 0.3), rgba(6, 182, 212, 0.3));
+    background: linear-gradient(145deg, hsl(217 91% 60% / 0.2), hsl(217 91% 60% / 0.1));
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 40% 6%) 50%, hsl(var(--background)) 100%);
+  }
+
+  .card-gradient {
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(210 40% 14%) 100%);
+    border: 1px solid hsl(var(--border));
   }
 }
 
@@ -126,10 +135,10 @@
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+    box-shadow: 0 0 20px hsl(217 91% 60% / 0.2);
   }
   to {
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.6), 0 0 40px rgba(6, 182, 212, 0.3);
+    box-shadow: 0 0 30px hsl(217 91% 60% / 0.4), 0 0 40px hsl(217 91% 60% / 0.2);
   }
 }
 
@@ -139,24 +148,24 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(15, 23, 42);
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.6), rgba(6, 182, 212, 0.6));
+  background: linear-gradient(180deg, hsl(217 91% 60% / 0.6), hsl(217 91% 60% / 0.4));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.8), rgba(6, 182, 212, 0.8));
+  background: linear-gradient(180deg, hsl(217 91% 60% / 0.8), hsl(217 91% 60% / 0.6));
 }
 
 /* Cyber-style button effects */
 .cyber-button {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(145deg, rgba(168, 85, 247, 0.1), rgba(6, 182, 212, 0.1));
-  border: 1px solid rgba(168, 85, 247, 0.3);
+  background: linear-gradient(145deg, hsl(var(--primary) / 0.1), hsl(var(--primary) / 0.05));
+  border: 1px solid hsl(var(--primary) / 0.3);
   transition: all 0.3s ease;
 }
 
@@ -167,7 +176,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.1), transparent);
   transition: left 0.5s;
 }
 
@@ -176,6 +185,6 @@
 }
 
 .cyber-button:hover {
-  border-color: rgba(168, 85, 247, 0.6);
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 30px rgba(6, 182, 212, 0.2);
+  border-color: hsl(var(--primary) / 0.6);
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
 }

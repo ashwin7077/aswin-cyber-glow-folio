@@ -97,12 +97,12 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen gradient-bg">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-lg border-b border-purple-500/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <div className="text-2xl font-bold text-gradient">
               Aswin Paudel
             </div>
             <div className="flex space-x-6">
@@ -110,10 +110,10 @@ const Index = () => {
                 <button
                   key={section}
                   onClick={() => setActiveSection(section)}
-                  className={`capitalize px-3 py-2 rounded-lg transition-all ${
+                  className={`capitalize px-3 py-2 rounded-lg transition-all font-medium ${
                     activeSection === section
-                      ? "bg-purple-600 text-white"
-                      : "text-gray-300 hover:text-white hover:bg-slate-800"
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent"
                   }`}
                 >
                   {section}
@@ -128,27 +128,27 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8">
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 p-1">
-              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
-                <Shield className="w-16 h-16 text-purple-400" />
+            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 p-1">
+              <div className="w-full h-full rounded-full bg-card flex items-center justify-center">
+                <Shield className="w-16 h-16 text-primary" />
               </div>
             </div>
-            <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold mb-4 text-gradient">
               Aswin Paudel
             </h1>
-            <p className="text-xl text-gray-300 mb-6">
+            <p className="text-xl text-muted-foreground mb-6">
               Cybersecurity Student & Ethical Hacker
             </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Passionate about protecting digital assets and exploring the ever-evolving landscape of cybersecurity. 
               Currently pursuing my studies while actively contributing to the security community through research and writing.
             </p>
             <div className="flex justify-center space-x-4">
-              <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Mail className="w-4 h-4 mr-2" />
                 Contact Me
               </Button>
-              <Button variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10">
+              <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
                 <FileText className="w-4 h-4 mr-2" />
                 Download Resume
               </Button>
@@ -162,14 +162,14 @@ const Index = () => {
         {/* About Section */}
         {activeSection === "about" && (
           <div className="animate-fade-in">
-            <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm">
+            <Card className="card-gradient backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="flex items-center text-2xl text-white">
-                  <User className="w-6 h-6 mr-3 text-purple-400" />
+                <CardTitle className="flex items-center text-2xl text-foreground">
+                  <User className="w-6 h-6 mr-3 text-primary" />
                   About Me
                 </CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-300 space-y-4">
+              <CardContent className="text-muted-foreground space-y-4">
                 <p>
                   I'm a dedicated cybersecurity student with a passion for understanding and mitigating digital threats. 
                   My journey in cybersecurity began with a curiosity about how systems work and how they can be protected.
@@ -191,10 +191,10 @@ const Index = () => {
         {/* Skills Section */}
         {activeSection === "skills" && (
           <div className="animate-fade-in">
-            <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm">
+            <Card className="card-gradient backdrop-blur-sm">
               <CardHeader>
-                <CardTitle className="flex items-center text-2xl text-white">
-                  <Code className="w-6 h-6 mr-3 text-purple-400" />
+                <CardTitle className="flex items-center text-2xl text-foreground">
+                  <Code className="w-6 h-6 mr-3 text-primary" />
                   Skills & Technologies
                 </CardTitle>
               </CardHeader>
@@ -203,7 +203,7 @@ const Index = () => {
                   {skills.map((skill, index) => (
                     <Badge
                       key={index}
-                      className="bg-gradient-to-r from-purple-600/20 to-cyan-600/20 border-purple-500/30 text-gray-200 hover:from-purple-600/30 hover:to-cyan-600/30 transition-all duration-300 justify-center py-2"
+                      className="bg-primary/10 border-primary/20 text-foreground hover:bg-primary/20 transition-all duration-300 justify-center py-2"
                     >
                       {skill}
                     </Badge>
@@ -217,21 +217,21 @@ const Index = () => {
         {/* Projects Section */}
         {activeSection === "projects" && (
           <div className="animate-fade-in space-y-6">
-            <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-              <Briefcase className="w-8 h-8 mr-3 text-purple-400" />
+            <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
+              <Briefcase className="w-8 h-8 mr-3 text-primary" />
               Projects
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {projects.map((project, index) => (
-                <Card key={index} className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
+                <Card key={index} className="card-gradient backdrop-blur-sm hover:bg-card/80 transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="text-white">{project.title}</CardTitle>
-                    <CardDescription className="text-gray-400">{project.description}</CardDescription>
+                    <CardTitle className="text-foreground">{project.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="secondary" className="bg-slate-700 text-gray-300">
+                        <Badge key={techIndex} variant="secondary" className="bg-secondary text-secondary-foreground">
                           {tech}
                         </Badge>
                       ))}
@@ -239,8 +239,8 @@ const Index = () => {
                     <Badge 
                       className={`${
                         project.status === "Completed" 
-                          ? "bg-green-600/20 text-green-400 border-green-500/30" 
-                          : "bg-yellow-600/20 text-yellow-400 border-yellow-500/30"
+                          ? "bg-green-500/20 text-green-400 border-green-500/30" 
+                          : "bg-yellow-500/20 text-yellow-400 border-yellow-500/30"
                       }`}
                     >
                       {project.status}
@@ -255,20 +255,20 @@ const Index = () => {
         {/* Achievements Section */}
         {activeSection === "achievements" && (
           <div className="animate-fade-in space-y-6">
-            <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-              <Award className="w-8 h-8 mr-3 text-purple-400" />
+            <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
+              <Award className="w-8 h-8 mr-3 text-primary" />
               Achievements
             </h2>
             <div className="space-y-4">
               {achievements.map((achievement, index) => (
-                <Card key={index} className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
+                <Card key={index} className="card-gradient backdrop-blur-sm hover:bg-card/80 transition-all duration-300">
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <div>
-                        <CardTitle className="text-white">{achievement.title}</CardTitle>
-                        <CardDescription className="text-gray-400 mt-2">{achievement.description}</CardDescription>
+                        <CardTitle className="text-foreground">{achievement.title}</CardTitle>
+                        <CardDescription className="text-muted-foreground mt-2">{achievement.description}</CardDescription>
                       </div>
-                      <Badge className="bg-gradient-to-r from-purple-600 to-cyan-600 text-white">
+                      <Badge className="bg-primary text-primary-foreground">
                         {achievement.year}
                       </Badge>
                     </div>
@@ -282,31 +282,31 @@ const Index = () => {
         {/* Certifications Section */}
         {activeSection === "certifications" && (
           <div className="animate-fade-in space-y-6">
-            <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-              <Shield className="w-8 h-8 mr-3 text-purple-400" />
+            <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
+              <Shield className="w-8 h-8 mr-3 text-primary" />
               Certifications
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
-                <Card key={index} className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
+                <Card key={index} className="card-gradient backdrop-blur-sm hover:bg-card/80 transition-all duration-300">
                   <CardHeader>
-                    <CardTitle className="text-white">{cert.name}</CardTitle>
-                    <CardDescription className="text-gray-400">{cert.issuer}</CardDescription>
+                    <CardTitle className="text-foreground">{cert.name}</CardTitle>
+                    <CardDescription className="text-muted-foreground">{cert.issuer}</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="flex justify-between items-center">
                       <Badge 
                         className={`${
                           cert.status === "Completed" 
-                            ? "bg-green-600/20 text-green-400 border-green-500/30"
+                            ? "bg-green-500/20 text-green-400 border-green-500/30"
                             : cert.status === "In Progress"
-                            ? "bg-blue-600/20 text-blue-400 border-blue-500/30"
-                            : "bg-gray-600/20 text-gray-400 border-gray-500/30"
+                            ? "bg-blue-500/20 text-blue-400 border-blue-500/30"
+                            : "bg-muted text-muted-foreground border-muted"
                         }`}
                       >
                         {cert.status}
                       </Badge>
-                      <span className="text-gray-500 text-sm">{cert.year}</span>
+                      <span className="text-muted-foreground text-sm">{cert.year}</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -318,25 +318,25 @@ const Index = () => {
         {/* Blogs Section */}
         {activeSection === "blogs" && (
           <div className="animate-fade-in space-y-6">
-            <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
-              <Book className="w-8 h-8 mr-3 text-purple-400" />
+            <h2 className="text-3xl font-bold text-foreground mb-6 flex items-center">
+              <Book className="w-8 h-8 mr-3 text-primary" />
               Latest Blog Posts
             </h2>
             <div className="space-y-4">
               {blogPosts.map((post, index) => (
-                <Card key={index} className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
+                <Card key={index} className="card-gradient backdrop-blur-sm hover:bg-card/80 transition-all duration-300">
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <CardTitle className="text-white hover:text-purple-400 transition-colors">
+                        <CardTitle className="text-foreground hover:text-primary transition-colors">
                           {post.title}
                         </CardTitle>
-                        <CardDescription className="text-gray-400 mt-2">{post.description}</CardDescription>
+                        <CardDescription className="text-muted-foreground mt-2">{post.description}</CardDescription>
                         <div className="flex items-center mt-3 space-x-4">
-                          <span className="text-sm text-gray-500">{post.readTime}</span>
+                          <span className="text-sm text-muted-foreground">{post.readTime}</span>
                           <Button 
                             size="sm" 
-                            className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+                            className="bg-primary hover:bg-primary/90 text-primary-foreground"
                           >
                             Read on Medium
                             <ExternalLink className="w-3 h-3 ml-2" />
@@ -348,11 +348,11 @@ const Index = () => {
                 </Card>
               ))}
             </div>
-            <Card className="bg-slate-800/50 border-purple-500/20 backdrop-blur-sm">
+            <Card className="card-gradient backdrop-blur-sm">
               <CardContent className="pt-6">
                 <div className="text-center">
-                  <p className="text-gray-400 mb-4">Want to read more of my cybersecurity insights?</p>
-                  <Button className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700">
+                  <p className="text-muted-foreground mb-4">Want to read more of my cybersecurity insights?</p>
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     Visit My Medium Profile
                     <ExternalLink className="w-4 h-4 ml-2" />
                   </Button>
@@ -364,29 +364,29 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-slate-900/80 border-t border-purple-500/20 py-12">
+      <footer className="bg-card/50 border-t border-border py-12">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
-            <p className="text-gray-400 mb-6">
+            <h3 className="text-2xl font-bold text-foreground mb-4">Let's Connect</h3>
+            <p className="text-muted-foreground mb-6">
               Always open to discussing cybersecurity, collaboration opportunities, or just having a great conversation!
             </p>
             <div className="flex justify-center space-x-6">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Mail className="w-5 h-5 mr-2" />
                 Email Me
               </Button>
-              <Button size="lg" variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10">
+              <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub
               </Button>
-              <Button size="lg" variant="outline" className="border-purple-500 text-purple-400 hover:bg-purple-500/10">
+              <Button size="lg" variant="outline" className="border-primary/30 text-primary hover:bg-primary/10">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </Button>
             </div>
-            <Separator className="my-8 bg-purple-500/20" />
-            <p className="text-gray-500">
+            <Separator className="my-8 bg-border" />
+            <p className="text-muted-foreground">
               © 2024 Aswin Paudel. Built with passion for cybersecurity.
             </p>
           </div>
