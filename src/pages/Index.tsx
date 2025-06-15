@@ -11,17 +11,17 @@ import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { CertificationTimeline } from "@/components/CertificationTimeline";
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState("dashboard");
+  const [activeSection, setActiveSection] = useState("about");
 
   const skills = [
-    { name: "Web Security", icon: Shield, level: 85, color: "text-red-400", category: "Offensive Security" },
-    { name: "Red Team Operations", icon: Bug, level: 78, color: "text-red-500", category: "Offensive Security" },
+    { name: "Web Security", icon: Shield, level: 85, color: "text-amber-400", category: "Offensive Security" },
+    { name: "Red Team Operations", icon: Bug, level: 78, color: "text-orange-500", category: "Offensive Security" },
     { name: "Blue Team Defense", icon: Eye, level: 72, color: "text-blue-400", category: "Defensive Security" },
-    { name: "Digital Forensics", icon: Search, level: 80, color: "text-green-400", category: "Defensive Security" },
+    { name: "Digital Forensics", icon: Search, level: 80, color: "text-emerald-400", category: "Defensive Security" },
     { name: "Malware Analysis", icon: Cpu, level: 75, color: "text-yellow-400", category: "Reverse Engineering" },
     { name: "Network Security", icon: Network, level: 82, color: "text-purple-400", category: "Infrastructure" },
     { name: "Cryptography", icon: Key, level: 70, color: "text-cyan-400", category: "Fundamentals" },
-    { name: "Incident Response", icon: AlertTriangle, level: 77, color: "text-orange-400", category: "Defensive Security" }
+    { name: "Incident Response", icon: AlertTriangle, level: 77, color: "text-red-400", category: "Defensive Security" }
   ];
 
   const projects = [
@@ -178,7 +178,7 @@ const Index = () => {
       title: "Top 5% TryHackMe Global",
       description: "Ranked in top 5% globally on TryHackMe platform with 500+ completed rooms",
       icon: Trophy,
-      color: "text-yellow-400",
+      color: "text-amber-400",
       date: "2024"
     },
     {
@@ -206,7 +206,7 @@ const Index = () => {
       title: "Bug Bounty Hall of Fame",
       description: "Recognized in Hall of Fame by 3+ major tech companies for security research",
       icon: Shield,
-      color: "text-green-400",
+      color: "text-emerald-400",
       date: "2023"
     },
     {
@@ -220,97 +220,128 @@ const Index = () => {
 
   const renderSection = () => {
     switch (activeSection) {
-      case "dashboard":
+      case "about":
         return (
-          <div className="space-y-12">
-            <AnimatedTerminal />
-
+          <div className="space-y-16">
+            {/* Stats Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
+              <Card className="modern-card group transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">Active Projects</p>
-                      <p className="text-3xl font-bold text-green-400">6</p>
+                      <p className="text-sm text-muted-foreground font-medium">Active Projects</p>
+                      <p className="text-3xl font-bold text-primary">6</p>
                     </div>
-                    <Code className="w-10 h-10 text-green-400 group-hover:scale-110 transition-transform" />
+                    <Code className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">+2 this month</div>
+                  <div className="mt-2 text-xs text-muted-foreground">+2 this month</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
+              <Card className="modern-card group transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">CTF Solved</p>
+                      <p className="text-sm text-muted-foreground font-medium">CTF Solved</p>
                       <p className="text-3xl font-bold text-blue-400">187</p>
                     </div>
-                    <Trophy className="w-10 h-10 text-blue-400 group-hover:scale-110 transition-transform" />
+                    <Trophy className="w-8 h-8 text-blue-400 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">Top 5% globally</div>
+                  <div className="mt-2 text-xs text-muted-foreground">Top 5% globally</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
+              <Card className="modern-card group transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">Certifications</p>
+                      <p className="text-sm text-muted-foreground font-medium">Certifications</p>
                       <p className="text-3xl font-bold text-purple-400">4</p>
                     </div>
-                    <Award className="w-10 h-10 text-purple-400 group-hover:scale-110 transition-transform" />
+                    <Award className="w-8 h-8 text-purple-400 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">OSCP in progress</div>
+                  <div className="mt-2 text-xs text-muted-foreground">OSCP in progress</div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gray-900 border-gray-800 cyber-border group hover:bg-gray-800/50 transition-all">
+              <Card className="modern-card group transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-gray-400">Writeups</p>
-                      <p className="text-3xl font-bold text-yellow-400">45</p>
+                      <p className="text-sm text-muted-foreground font-medium">Writeups</p>
+                      <p className="text-3xl font-bold text-emerald-400">45</p>
                     </div>
-                    <Book className="w-10 h-10 text-yellow-400 group-hover:scale-110 transition-transform" />
+                    <Book className="w-8 h-8 text-emerald-400 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="mt-2 text-xs text-gray-500">Medium & GitHub</div>
+                  <div className="mt-2 text-xs text-muted-foreground">Medium & GitHub</div>
                 </CardContent>
               </Card>
             </div>
 
-            <Card className="bg-gray-900 border-gray-800 cyber-border">
+            {/* About Section */}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h2 className="text-4xl font-bold">About Me</h2>
+                  <div className="section-divider"></div>
+                </div>
+                <div className="space-y-4 text-lg leading-relaxed">
+                  <p>
+                    I'm a passionate cybersecurity student and ethical hacker dedicated to securing the digital world. 
+                    With expertise in penetration testing, vulnerability research, and incident response, 
+                    I help organizations strengthen their security posture.
+                  </p>
+                  <p>
+                    Currently pursuing my OSCP certification while actively participating in bug bounty programs 
+                    and CTF competitions. I believe in continuous learning and sharing knowledge through 
+                    technical writeups and open-source contributions.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {["Ethical Hacking", "Penetration Testing", "Security Research", "CTF Player", "Bug Bounty Hunter"].map((tag) => (
+                    <span key={tag} className="skill-tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="relative">
+                <div className="w-80 h-80 mx-auto rounded-2xl bg-gradient-to-br from-primary/20 to-orange-400/20 p-1">
+                  <div className="w-full h-full rounded-xl bg-background flex items-center justify-center">
+                    <Shield className="w-32 h-32 text-primary" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity Feed */}
+            <Card className="modern-card">
               <CardHeader>
-                <CardTitle className="text-gray-100 flex items-center">
-                  <Activity className="w-5 h-5 mr-2 text-green-400" />
-                  Live Activity Feed
+                <CardTitle className="flex items-center text-xl">
+                  <Activity className="w-5 h-5 mr-3 text-primary" />
+                  Recent Activity
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-4 font-mono text-sm">
-                  <div className="flex items-center space-x-3 animate-fade-in">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-green-400">[LIVE]</span>
-                    <span className="text-gray-300">Completed TryHackMe "Relevant" room - Windows privilege escalation</span>
-                    <span className="text-gray-500">23 minutes ago</span>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4 p-4 rounded-lg bg-secondary/30">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-3 animate-pulse"></div>
+                    <div>
+                      <p className="font-medium">Completed TryHackMe "Relevant" room</p>
+                      <p className="text-sm text-muted-foreground">Windows privilege escalation techniques - 23 minutes ago</p>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-blue-400">[BLOG]</span>
-                    <span className="text-gray-300">Published "Advanced XSS Techniques" on Medium</span>
-                    <span className="text-gray-500">2 hours ago</span>
+                  <div className="flex items-start space-x-4 p-4 rounded-lg bg-secondary/20">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-3"></div>
+                    <div>
+                      <p className="font-medium">Published "Advanced XSS Techniques" on Medium</p>
+                      <p className="text-sm text-muted-foreground">2 hours ago</p>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                    <span className="text-yellow-400">[CVE]</span>
-                    <span className="text-gray-300">Submitted critical vulnerability report to vendor</span>
-                    <span className="text-gray-500">1 day ago</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-purple-400">[CERT]</span>
-                    <span className="text-gray-300">OSCP Lab progress: 75% complete</span>
-                    <span className="text-gray-500">3 days ago</span>
+                  <div className="flex items-start space-x-4 p-4 rounded-lg bg-secondary/20">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full mt-3"></div>
+                    <div>
+                      <p className="font-medium">Submitted critical vulnerability report</p>
+                      <p className="text-sm text-muted-foreground">1 day ago</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -323,15 +354,12 @@ const Index = () => {
 
       case "skills":
         return (
-          <div className="space-y-8">
+          <div className="space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-gray-100 flex items-center justify-center">
-                <Code className="w-10 h-10 mr-3 text-green-400" />
-                Technical Arsenal
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                A comprehensive overview of my cybersecurity expertise across multiple domains, 
-                from offensive security to digital forensics.
+              <h2 className="text-4xl font-bold">Technical Skills</h2>
+              <div className="section-divider"></div>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                A comprehensive overview of my cybersecurity expertise across multiple domains
               </p>
             </div>
             <InteractiveSkillMeter skills={skills} />
@@ -340,15 +368,12 @@ const Index = () => {
 
       case "certifications":
         return (
-          <div className="space-y-8">
+          <div className="space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-gray-100 flex items-center justify-center">
-                <Award className="w-10 h-10 mr-3 text-green-400" />
-                Certification Journey
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                My professional development path through industry-recognized cybersecurity certifications, 
-                tracking progress and future goals.
+              <h2 className="text-4xl font-bold">Certifications</h2>
+              <div className="section-divider"></div>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                My professional development path through industry-recognized cybersecurity certifications
               </p>
             </div>
             <CertificationTimeline certifications={certifications} />
@@ -357,14 +382,12 @@ const Index = () => {
 
       case "achievements":
         return (
-          <div className="space-y-8">
+          <div className="space-y-12">
             <div className="text-center space-y-4">
-              <h2 className="text-4xl font-bold text-gray-100 flex items-center justify-center">
-                <Trophy className="w-10 h-10 mr-3 text-green-400" />
-                Hall of Fame
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Recognition and achievements in cybersecurity research, competitions, and community contributions.
+              <h2 className="text-4xl font-bold">Achievements</h2>
+              <div className="section-divider"></div>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Recognition and achievements in cybersecurity research, competitions, and community contributions
               </p>
             </div>
             
@@ -372,18 +395,18 @@ const Index = () => {
               {achievements.map((achievement, index) => (
                 <Card 
                   key={index} 
-                  className="bg-gray-900 border-gray-800 hover:border-gray-700 transition-all duration-300 cyber-border group"
+                  className="modern-card group transition-all duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <CardHeader>
                     <div className="flex items-center justify-between">
-                      <achievement.icon className={`w-10 h-10 ${achievement.color} group-hover:scale-110 transition-transform`} />
-                      <Badge className="bg-gray-800 text-gray-300 text-xs">
+                      <achievement.icon className={`w-8 h-8 ${achievement.color} group-hover:scale-110 transition-transform`} />
+                      <Badge variant="secondary" className="text-xs">
                         {achievement.date}
                       </Badge>
                     </div>
-                    <CardTitle className="text-gray-100">{achievement.title}</CardTitle>
-                    <CardDescription className="text-gray-400">{achievement.description}</CardDescription>
+                    <CardTitle className="text-lg">{achievement.title}</CardTitle>
+                    <CardDescription className="text-sm">{achievement.description}</CardDescription>
                   </CardHeader>
                 </Card>
               ))}
@@ -397,47 +420,35 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-950 text-gray-100">
-      <div className="bg-gray-900 border-b border-gray-800 p-2">
-        <div className="flex items-center space-x-2 text-sm">
-          <div className="flex space-x-1">
-            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-            <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-          </div>
-          <span className="text-gray-400 font-mono">aswin@cybersec:~$</span>
-          <span className="text-green-400 font-mono animate-pulse">_</span>
-        </div>
-      </div>
-
-      <nav className="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Navigation */}
+      <nav className="sticky top-0 bg-background/80 backdrop-blur-md border-b border-border z-50">
+        <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="relative">
-                <Terminal className="w-8 h-8 text-green-400 animate-glow" />
-                <div className="absolute inset-0 bg-green-400 opacity-20 rounded-full animate-ping"></div>
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <Shield className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <span className="text-2xl font-bold text-green-400 font-mono">aswin@cybersec</span>
-                <div className="text-xs text-gray-500 font-mono">Cybersecurity Specialist</div>
+                <h1 className="text-xl font-bold">Aswin Paudel</h1>
+                <p className="text-sm text-muted-foreground">Cybersecurity Specialist</p>
               </div>
             </div>
             <div className="flex space-x-1">
               {[
-                { id: "dashboard", label: "dashboard", icon: Activity },
-                { id: "projects", label: "projects", icon: Briefcase },
-                { id: "skills", label: "skills", icon: Code },
-                { id: "certifications", label: "certifications", icon: Award },
-                { id: "achievements", label: "achievements", icon: Trophy }
+                { id: "about", label: "About", icon: User },
+                { id: "projects", label: "Projects", icon: Briefcase },
+                { id: "skills", label: "Skills", icon: Code },
+                { id: "certifications", label: "Certifications", icon: Award },
+                { id: "achievements", label: "Achievements", icon: Trophy }
               ].map((section) => (
                 <button
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-mono text-sm transition-all cyber-button ${
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     activeSection === section.id
-                      ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                      : "text-gray-400 hover:text-gray-200 hover:bg-gray-800"
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
                   }`}
                 >
                   <section.icon className="w-4 h-4" />
@@ -449,96 +460,79 @@ const Index = () => {
         </div>
       </nav>
 
-      <section className="py-20 px-6 gradient-bg relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-400/5 via-blue-400/5 to-purple-400/5"></div>
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center">
-            <div className="mb-12 animate-fade-in">
-              <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-r from-green-400/20 via-blue-400/20 to-purple-400/20 p-1 animate-glow">
-                <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center relative overflow-hidden">
-                  <Shield className="w-24 h-24 text-green-400 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400/10 to-blue-400/10 animate-pulse"></div>
-                </div>
-              </div>
-              
-              <h1 className="text-7xl font-bold mb-6 font-mono">
-                <span className="text-gradient animate-slide-up">Aswin</span>{" "}
-                <span className="text-gray-100 animate-slide-up" style={{ animationDelay: '0.2s' }}>Paudel</span>
-              </h1>
-              
-              <div className="text-3xl text-gray-300 mb-4 font-mono animate-slide-up" style={{ animationDelay: '0.4s' }}>
-                <span className="text-green-400">$</span> whoami
-              </div>
-              
-              <div className="space-y-2 animate-slide-up" style={{ animationDelay: '0.6s' }}>
-                <p className="text-2xl text-gray-300 font-mono">
-                  <span className="text-green-400">{'>'}</span> Cybersecurity Specialist
-                </p>
-                <p className="text-xl text-gray-400 font-mono">
-                  <span className="text-blue-400">{'>'}</span> Ethical Hacker & Security Researcher
-                </p>
-                <p className="text-lg text-gray-500 font-mono">
-                  <span className="text-purple-400">{'>'}</span> CTF Player & Bug Bounty Hunter
-                </p>
-              </div>
-              
-              <div className="flex justify-center space-x-4 mt-8 animate-slide-up" style={{ animationDelay: '0.8s' }}>
-                <Button className="bg-green-500 hover:bg-green-600 text-black font-mono cyber-button">
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact Me
-                </Button>
-                <Button variant="outline" className="border-green-500/30 text-green-400 hover:bg-green-500/10 font-mono cyber-button">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download CV
-                </Button>
-                <Button variant="outline" className="border-blue-500/30 text-blue-400 hover:bg-blue-500/10 font-mono cyber-button">
-                  <Book className="w-4 h-4 mr-2" />
-                  Read Blog
-                </Button>
-              </div>
+      {/* Hero Section */}
+      <section className="py-20 px-6 gradient-bg">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-12 animate-fade-in">
+            <h1 className="text-6xl font-bold mb-6">
+              <span className="text-gradient">Aswin</span>{" "}
+              <span>Paudel</span>
+            </h1>
+            
+            <p className="text-2xl text-muted-foreground mb-8">
+              Cybersecurity Student & Ethical Hacker
+            </p>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+              Passionate about securing the digital world through ethical hacking, 
+              vulnerability research, and continuous learning in cybersecurity.
+            </p>
+            
+            <div className="flex justify-center space-x-4">
+              <Button className="modern-button">
+                <Mail className="w-4 h-4 mr-2" />
+                Contact Me
+              </Button>
+              <Button variant="outline" className="px-6 py-3">
+                <Download className="w-4 h-4 mr-2" />
+                Download CV
+              </Button>
+              <Button variant="outline" className="px-6 py-3">
+                <Book className="w-4 h-4 mr-2" />
+                Read Blog
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-6 py-16">
         {renderSection()}
       </div>
 
-      <footer className="bg-gray-900 border-t border-gray-800 py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-400/5 via-transparent to-blue-400/5"></div>
-        <div className="max-w-7xl mx-auto px-6 relative">
+      {/* Footer */}
+      <footer className="bg-secondary/20 border-t border-border py-16">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center space-y-8">
-            <h3 className="text-4xl font-bold text-gray-100 mb-4 font-mono">
-              $ contact --aswin --secure
+            <h3 className="text-3xl font-bold mb-4">
+              Let's Connect
             </h3>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               Open to collaboration on cybersecurity research, bug bounty partnerships, 
               and discussing the latest threats in the digital landscape.
             </p>
             
-            <div className="flex justify-center space-x-6">
-              <Button size="lg" className="bg-green-500 hover:bg-green-600 text-black font-mono cyber-button">
+            <div className="flex justify-center space-x-4">
+              <Button className="modern-button">
                 <Mail className="w-5 h-5 mr-2" />
                 aswin@cybersec.dev
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 font-mono cyber-button">
+              <Button variant="outline">
                 <Github className="w-5 h-5 mr-2" />
                 GitHub
               </Button>
-              <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 font-mono cyber-button">
+              <Button variant="outline">
                 <Linkedin className="w-5 h-5 mr-2" />
                 LinkedIn
               </Button>
             </div>
             
-            <Separator className="my-8 bg-gray-800" />
+            <Separator className="my-8" />
             
-            <div className="space-y-4">
-              <p className="text-gray-500 font-mono">
-                © 2024 Aswin Paudel | Securing the digital world, one vulnerability at a time
-              </p>
-              <div className="flex justify-center space-x-4 text-sm text-gray-600">
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>© 2024 Aswin Paudel | Securing the digital world, one vulnerability at a time</p>
+              <div className="flex justify-center space-x-4">
                 <span>Built with React & TypeScript</span>
                 <span>•</span>
                 <span>Styled with Tailwind CSS</span>
